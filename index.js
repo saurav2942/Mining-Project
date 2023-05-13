@@ -163,6 +163,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // console.log(ect);
       // console.log(edd);
       // console.log(epwv);
+    
+      // first D -> Id Value And Second value -> the variable which is denoting the current element
       document.getElementById("D").value = D;
       document.getElementById("D").value = D;
       document.getElementById("D").value = D;

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="Description"
+      content="The Portfolio Of Saurav A Frontend Developer From IIEST, Shibppur, West Bengal"
+    />
+    <title>Mining Project</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Montserrat:ital@0;1&family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/44dcd66151.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Calculator</h1>
+      <div class="wrapper">
+        <ul>
+          <li>
+            <p>Number Of Rows(R)</p>
+            <input
+              type="number"
+              id="number-rows"
+              placeholder="number of rows"
+              step="0.01"
+              required
+            />
+          </li>
+          <li>
+            <p>Bench Height(BH)</p>
+            <input
+              type="number"
+              id="bench-height"
+              placeholder="Bench height"
+              step="0.01"
+              required
+            />
+          </li>
+          <li>
+            <p>Bench Width(W)</p>
+            <input
+              type="number"
+              id="bench-width"
+              placeholder="Bench width"
+              step="0.01"
+              required
+            />
+          </li>
+        </ul>
+        <div class="custom-item">
+          <p id="ct-rt">Rock Type(RT)</p>
+          <select id="rock-type">
+            <option selected disabled hidden>Select</option>
+            <option value="1">Sandstone</option>
+            <option value="2">LimeStone</option>
+            <option value="3">Shale</option>
+            <option value="4">Bassalt</option>
+            <option value="5">Coal</option>
+            <option value="0">Other</option>
+          </select>
+          <div id="rocktype-subcategory" style="display: none">
+            <select id="sub-rock-type">
+              <option selected disabled hidden>Select</option>
+              <option value="0">Type1</option>
+              <option value="1">Type2</option>
+              <option value="2">Type3</option>
+              <option value="3">Type4</option>
+            </select>
+          </div>
+
+          <div id="rocktype-other-container" style="display: none">
+            <ul>
+              <li>
+                <p>Rock Density</p>
+                <input
+                  type="number"
+                  class="rock-sub-input"
+                  id="rt-sub-input1"
+                  placeholder="rock density"
+                  step="0.01"
+                  required
+                />
+              </li>
+              <li>
+                <p>P-Wave Velocity(RV)</p>
+                <input
+                  type="number"
+                  class="rock-sub-input"
+                  id="rt-sub-input2"
+                  placeholder="P-Wave Velocity"
+                  step="0.01"
+                  required
+                />
+              </li>
+            </ul>
+          </div>
+
+          <p id="ct-et">Explosives</p>
+          <select id="explosive-type">
+            <option selected disabled hidden>Select</option>
+            <option value="1">Type1</option>
+            <option value="2">Type2</option>
+            <option value="3">Type3</option>
+            <option value="0">Other</option>
+          </select>
+
+          <div id="explosivetype-other-container" style="display: none">
+            <ul>
+              <li>
+                <p>Cost(Per Kg)</p>
+                <input
+                  type="number"
+                  class="et-input"
+                  id="et-sub-input1"
+                  placeholder="Cost Per Key"
+                  step="0.01"
+                  required
+                />
+              </li>
+              <li>
+                <p>Rock Density</p>
+                <input
+                  type="number"
+                  class="et-input"
+                  id="et-sub-input2"
+                  placeholder="Cost Per Key"
+                  step="0.01"
+                  required
+                />
+              </li>
+              <li>
+                <p>P-Wave Velocity</p>
+                <input
+                  type="number"
+                  class="et-input"
+                  id="et-sub-input3"
+                  placeholder="Cost Per Key"
+                  step="0.01"
+                  required
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="button">
+          <a class="btn clc" id="calculate">Calculate</a>
+          <a class="btn report" id="report">Generate Report</a>
+        </div>
+      </div>
+
+      <div class="after-clc" id="aft-clc">
+        <p class="af-clc-heading">Calculated Values are as following</p>
+
+        <ul>
+          <li>
+            <p>Diameter(D)</p>
+            <input
+              id="D"
+              type="number"
+              id="number-rows"
+              placeholder="Diameter(D)"
+              disabled
+            />
+          </li>
+          <li>
+            <p>Burden(B)</p>
+            <input
+              id="Burden"
+              type="number"
+              id="bench-height"
+              placeholder="Burden(B)"
+              step="0.01"
+              disabled
+            />
+          </li>
+          <li>
+            <p>Spacing(S)</p>
+            <input
+              type="number"
+              id="D"
+              id="bench-width"
+              placeholder="Spacing(S)"
+              step="0.01"
+            />
+          </li>
+          <li>
+            <p>SubDrill(SD)</p>
+            <input
+              id="D"
+              type="number"
+              id="density"
+              placeholder="SubDrill(SD)"
+              step="0.01"
+            />
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>Length Of Hole(L)</p>
+            <input
+              id="D"
+              type="number"
+              id="number-rows"
+              placeholder="Length Of Hole(L)"
+            />
+          </li>
+          <li>
+            <p>Stemming(ST)</p>
+            <input
+              id="D"
+              type="number"
+              id="bench-height"
+              placeholder="Stemming(ST)"
+              step="0.01"
+            />
+          </li>
+          <li>
+            <p>Number Of Holes(N)</p>
+            <input
+              id="D"
+              type="number"
+              id="bench-width"
+              placeholder="Number Of Holes(N)"
+              step="0.01"
+            />
+          </li>
+          <li>
+            <p>Density(RD)</p>
+            <input
+              type="number"
+              id="density"
+              placeholder="Density(RD)"
+              step="0.01"
+            />
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>Change Length(CL)</p>
+            <input
+              type="number"
+              id="number-rows"
+              placeholder="Change Length(CL)"
+            />
+          </li>
+          <li>
+            <p>Ground Vibration(V)</p>
+            <input
+              type="number"
+              id="bench-height"
+              placeholder="Ground Vibration(V)"
+              step="0.01"
+            />
+          </li>
+          <li>
+            <p>Powder Factor For A Hole(PF)</p>
+            <input
+              type="number"
+              id="bench-width"
+              placeholder="Powder Factor For A Hole(PF)"
+              step="0.01"
+            />
+          </li>
+          <li>
+            <p>Blasting Cost(BC)</p>
+            <input
+              type="number"
+              id="density"
+              placeholder="Blasting Cost(BC)"
+              step="0.01"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="index.js"></script>
+  </body>
+</html>

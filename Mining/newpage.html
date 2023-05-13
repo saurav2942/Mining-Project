@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Preffered Explosive</title>
+  </head>
+  <style>
+    div {
+      text-align: center;
+      font-size: 30px;
+    }
+  </style>
+  <body>
+    <!-- Define script to retrieve variables -->
+    <div>
+      <p>Preffered Explosives Details Are As Follows</p>
+    </div>
+    <script>
+      // Retrieve variables from URL parameter
+      var urlParams = new URLSearchParams(window.location.search);
+      var vars = JSON.parse(decodeURIComponent(urlParams.get("vars")));
+
+      // Display variables on the page
+      document.write("<p>Preffered Explosive: " + vars.var1 + "</p>");
+      document.write("<p>Number Of Holes: " + vars.var2 + "</p>");
+      document.write("<p>Diameter: " + vars.var3 + "</p>");
+      document.write("<p>Burden: " + vars.var4 + "</p>");
+      document.write("<p>Spacing: " + vars.var5 + "</p>");
+      document.write("<p>Sub Drill: " + vars.var6 + "</p>");
+      document.write("<p>Charge Length: " + vars.var7 + "</p>");
+      document.write("<p>Stemming: " + vars.var8 + "</p>");
+      document.write("<p>Powder Factor: " + vars.var9 + "</p>");
+      document.write("<p>Blasting Cost: " + vars.var10 + "</p>");
+      document.write("<p>R1: " + vars.var11 + "</p>");
+      document.write("<p>R2: " + vars.var12 + "</p>");
+      document.write("<p>R3: " + vars.var13 + "</p>");
+      //.....
+    </script>
+  </body>
+</html>

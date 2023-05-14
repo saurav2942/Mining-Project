@@ -3,29 +3,123 @@ document.addEventListener("DOMContentLoaded", () => {
   var DefaultRockTypeValues = {
     1: [
       [2.45, 3050],
-      [2.45, 3050],
-      [2.45, 3050],
-      [2.45, 3050],
-      [2.45, 3050],
+      [2.65, 3700],
+      [2.4, 3100],
+      [2.55, 4000],
+      [2.35, 2900],
     ],
     2: [
-      [2.45, 3050],
-      [2.45, 3050],
-      [2.45, 3050],
-      [2.45, 3050],
-      [2.45, 3050],
+      [2.05, 2750],
+      [2.15, 2250],
+      [2.85, 5250],
+      [2.55, 5000],
+      [2.6, 4500],
     ],
     3: [
-      [2.45, 3050],
-      [2.45, 3050],
-      [2.45, 3050],
-      [2.45, 3050],
-      [2.45, 3050],
+      [2.6, 3500],
+      [2.45, 3350],
+      [2.55, 3450],
+      [2.45, 3350],
+      [2.75, 4700],
+    ],
+    4: [
+      [2.7, 5900],
+      [2.7, 5900],
+      [2.7, 5900],
+      [2.7, 6000],
+      [2.7, 5900],
+    ],
+    5: [
+      [2.8, 6250],
+      [2.8, 5900],
+      [2.7, 6050],
+      [2.9, 6250],
+      [2.85, 6250],
+    ],
+    6: [
+      [1.6, 4000],
+      [1.25, 2750],
+      [0.85, 1750],
+      [1.25, 3250],
+      [0.45, 1000],
+    ],
+    7: [
+      [5.1, 4975],
+      [5.05, 5350],
+      [3.8, 3850],
+      [4.25, 4300],
+      [3.85, 3900],
+    ],
+    8: [
+      [4.2, 4650],
+      [4.95, 5250],
+      [4.7, 4950],
+      [3.8, 4000],
+      [3.75, 4000],
+    ],
+    9: [
+      [4, 4400],
+      [4.45, 4750],
+      [3.45, 3550],
+      [5.65, 5850],
+      [4.05, 4400],
+    ],
+    10: [
+      [2.9, 2850],
+      [2.35, 2450],
+      [3.4, 3550],
+      [2.65, 2600],
+      [2.75, 2850],
     ],
   };
+
+  // New Changes
+  var DefaultRockTypeNames = {
+    1: [
+      "Arkose",
+      "Greywacke",
+      "Lithic Sandstone",
+      "Quartz Sandstone",
+      "Feldspathic",
+    ],
+    2: ["Chalk", "Coquina", "Dolomite", "Oolitic Limestone", "Travertine"],
+    3: [
+      "Black shale",
+      "Green shale",
+      "Grey shale",
+      "Red shale",
+      "Siliceous shale",
+    ],
+    4: [
+      "Adamellite",
+      "Alaskite",
+      "Granite Porphyry",
+      "Granodiorite",
+      "Rapakivi Granite",
+    ],
+    5: [
+      "Alkali Basalt",
+      "Andesitic Basalt",
+      "Basaltic Andesite",
+      "Flood Basalt",
+      "Oceanic Basalt",
+    ],
+    6: [
+      "Anthracite Coal",
+      "Bituminous Coal",
+      "Lignite Coal",
+      "Subbituminous Coal",
+      "Peat",
+    ],
+    7: ["Hematite", "Magnetite", "Goethite", "Siderite", "Limonite"],
+    8: ["Chalcopyrite", "Bornite", "Covellite", "Malachite", "Azurite"],
+    9: ["Sphalerite", "Smithsonite", "Hemimorphite", "Zincite", "Willemite"],
+    10: ["Bauxite", "Gibbsite", "Diaspore", "Kaolinite", "Alunite"],
+  };
+
   // cost density velocity
   var DefaultExplosiveTypeValues = {
-    1: [1, 2, 3],
+    1: [85, 1.175, 3450],
     2: [4, 5, 6],
     3: [7, 9, 9],
   };
@@ -52,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     r3;
   var rockType = document.getElementById("rock-type");
   var rockTypeValue = 0;
+  var subRockType; // made another new variable ------------------
   var subRockTypevalue = 0;
 
   var explosiveType = document.getElementById("explosive-type");
@@ -64,7 +159,8 @@ document.addEventListener("DOMContentLoaded", () => {
     rockTypeValue = rockType.value;
     RTotherContainerDiv.style.display = "none";
     const subRockTypeDiv = document.getElementById("rocktype-subcategory");
-
+    // add this line -------------------------
+    subRockType = document.getElementById("sub-rock-type");
     var RTsubInput = document.getElementsByClassName("rock-sub-input");
     RTsubInput.value = 0;
     if (rockTypeValue == 0) {
@@ -77,6 +173,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       RTsubInput.value = "0";
       subRockTypeDiv.style.display = "block";
+
+      // New Changes-------------------------
+      for (var i = 1; i <= 10; i++) {
+        subRockType[i - 1].innerHTML =
+          DefaultRockTypeNames[rockTypeValue][i - 1];
+      }
       // here will go constant values
     }
   });
@@ -138,17 +240,22 @@ document.addEventListener("DOMContentLoaded", () => {
         ans = explosiveType.innerHTML;
       }
       dia = 15 * bh;
-      D = dia / 1;
+      D = dia / 1000;
       burden = 30 * D;
       spacing = 1.15 * burden;
       subDrill = 15 * D;
-      lengthOfHole = subDrill + bh;
+      console.log(subDrill);
+      console.log(bh);
+      lengthOfHole = parseFloat(subDrill) + parseFloat(bh);
       stemming = 20 * D;
-      Nholes = (bh / spacing) * nr;
+      Nholes = bw / spacing;
+      Nholes = parseInt(Nholes);
+      Nholes = Nholes * nr;
       cl = 20 * D;
-      pwf = (burden * spacing * bh * rdd * 4) / (edd * cl * 3.14 * D * D);
-      totalcharge = (3.14 * D * D * cl * nr * edd) / 4;
-      blct = totalcharge / ect;
+      pwf =
+        (burden * spacing * bh * rdd * 4) / (edd * 9810 * cl * 3.14 * D * D);
+      totalcharge = (3.14 * D * D * cl * Nholes * edd * 9810) / 4;
+      blct = totalcharge * ect;
       (v1 = 10), (v2 = 25), (v3 = 5);
       r1 = (Math.pow(v1, 0.625) * Math.sqrt(totalcharge)) / 1140;
       r2 = (Math.pow(v2, 0.625) * Math.sqrt(totalcharge)) / 1140;
@@ -163,17 +270,22 @@ document.addEventListener("DOMContentLoaded", () => {
       // console.log(ect);
       // console.log(edd);
       // console.log(epwv);
-    
-      // first D -> Id Value And Second value -> the variable which is denoting the current element
-      document.getElementById("D").value = D;
-      document.getElementById("D").value = D;
-      document.getElementById("D").value = D;
-      document.getElementById("D").value = D;
-      document.getElementById("D").value = D;
-      document.getElementById("D").value = D;
-      document.getElementById("D").value = D;
-      document.getElementById("D").value = D;
-      document.getElementById("D").value = D;
+      Nholes = parseInt(Nholes);
+      pwf = parseFloat(pwf).toFixed(2);
+      blct = parseFloat(blct).toFixed(2);
+      document.getElementById("Diameter").value = dia;
+      document.getElementById("Burden").value = burden;
+      document.getElementById("Spacing").value = spacing;
+      document.getElementById("SubDrill").value = subDrill;
+      document.getElementById("Length Of Holes").value = lengthOfHole;
+      document.getElementById("Stemming").value = stemming;
+      document.getElementById("Number Of Holes").value = Nholes;
+      document.getElementById("Powder Factor For A Hole").value = pwf;
+      document.getElementById("Blasting Cost").value = blct;
+      document.getElementById("Change Length").value = cl;
+      document.getElementById("Total Charge").value =
+        parseFloat(totalcharge).toFixed(2);
+
       document.getElementById("aft-clc").style.display = "contents";
     });
   // Report Generating API

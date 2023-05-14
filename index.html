@@ -38,7 +38,7 @@
       <div class="wrapper">
         <ul>
           <li>
-            <p>Number Of Rows(R)</p>
+            <p>Number Of Rows</p>
             <input
               type="number"
               id="number-rows"
@@ -48,7 +48,7 @@
             />
           </li>
           <li>
-            <p>Bench Height(BH)</p>
+            <p>Bench Height (m)</p>
             <input
               type="number"
               id="bench-height"
@@ -58,7 +58,7 @@
             />
           </li>
           <li>
-            <p>Bench Width(W)</p>
+            <p>Bench Width (m)</p>
             <input
               type="number"
               id="bench-width"
@@ -69,41 +69,48 @@
           </li>
         </ul>
         <div class="custom-item">
-          <p id="ct-rt">Rock Type(RT)</p>
+          <p id="ct-rt">Rock Type</p>
           <select id="rock-type">
             <option selected disabled hidden>Select</option>
             <option value="1">Sandstone</option>
             <option value="2">LimeStone</option>
             <option value="3">Shale</option>
-            <option value="4">Bassalt</option>
-            <option value="5">Coal</option>
+            <option value="4">Granite</option>
+            <option value="5">Basalt</option>
+            <option value="6">Coal</option>
+            <option value="7">Iron Ores</option>
+            <option value="8">Copper Ores</option>
+            <option value="9">Zinc Ores</option>
+            <option value="10">Aluminium Ores</option>
             <option value="0">Other</option>
           </select>
           <div id="rocktype-subcategory" style="display: none">
             <select id="sub-rock-type">
-              <option selected disabled hidden>Select</option>
-              <option value="0">Type1</option>
-              <option value="1">Type2</option>
-              <option value="2">Type3</option>
-              <option value="3">Type4</option>
+              <!-- New Changes  -------------------------------------->
+              <!-- <option selected disabled hidden>Select</option> -->
+              <option value="1">Type1</option>
+              <option value="2">Type2</option>
+              <option value="3">Type3</option>
+              <option value="4">Type4</option>
+              <option value="5">Type4</option>
             </select>
           </div>
 
           <div id="rocktype-other-container" style="display: none">
             <ul>
               <li>
-                <p>Rock Density</p>
+                <p>Rock Density (g/cc)</p>
                 <input
                   type="number"
                   class="rock-sub-input"
                   id="rt-sub-input1"
-                  placeholder="rock density"
+                  placeholder="Rock density"
                   step="0.01"
                   required
                 />
               </li>
               <li>
-                <p>P-Wave Velocity(RV)</p>
+                <p>P-Wave Velocity (m/s)</p>
                 <input
                   type="number"
                   class="rock-sub-input"
@@ -118,44 +125,44 @@
 
           <p id="ct-et">Explosives</p>
           <select id="explosive-type">
-            <option selected disabled hidden>Select</option>
-            <option value="1">Type1</option>
-            <option value="2">Type2</option>
-            <option value="3">Type3</option>
+            <option selected disabled hidden>Auto</option>
+            <option value="1">Slurry Catridge</option>
+            <option value="2">Emulsion</option>
+            <option value="3">ANFO</option>
             <option value="0">Other</option>
           </select>
 
           <div id="explosivetype-other-container" style="display: none">
             <ul>
               <li>
-                <p>Cost(Per Kg)</p>
+                <p>Cost (Per Kg)</p>
                 <input
                   type="number"
                   class="et-input"
                   id="et-sub-input1"
-                  placeholder="Cost Per Key"
+                  placeholder="Cost Per Kg"
                   step="0.01"
                   required
                 />
               </li>
               <li>
-                <p>Rock Density</p>
+                <p>Explosive Density (g/cc)</p>
                 <input
                   type="number"
                   class="et-input"
                   id="et-sub-input2"
-                  placeholder="Cost Per Key"
+                  placeholder="Explosive Density"
                   step="0.01"
                   required
                 />
               </li>
               <li>
-                <p>P-Wave Velocity</p>
+                <p>Velocity of Detonation (m/s)</p>
                 <input
                   type="number"
                   class="et-input"
                   id="et-sub-input3"
-                  placeholder="Cost Per Key"
+                  placeholder="Velocity of Detonation"
                   step="0.01"
                   required
                 />
@@ -174,9 +181,9 @@
 
         <ul>
           <li>
-            <p>Diameter(D)</p>
+            <p>Diameter (mm)</p>
             <input
-              id="D"
+              id="Diameter"
               type="number"
               id="number-rows"
               placeholder="Diameter(D)"
@@ -184,7 +191,7 @@
             />
           </li>
           <li>
-            <p>Burden(B)</p>
+            <p>Burden (m)</p>
             <input
               id="Burden"
               type="number"
@@ -195,100 +202,109 @@
             />
           </li>
           <li>
-            <p>Spacing(S)</p>
+            <p>Spacing (m)</p>
             <input
               type="number"
-              id="D"
+              id="Spacing"
               id="bench-width"
               placeholder="Spacing(S)"
               step="0.01"
+              disabled
             />
           </li>
           <li>
-            <p>SubDrill(SD)</p>
+            <p>SubDrill (m)</p>
             <input
-              id="D"
+              id="SubDrill"
               type="number"
               id="density"
               placeholder="SubDrill(SD)"
               step="0.01"
+              disabled
             />
           </li>
         </ul>
         <ul>
           <li>
-            <p>Length Of Hole(L)</p>
+            <p>Length Of Holes (m)</p>
             <input
-              id="D"
+              id="Length Of Holes"
               type="number"
               id="number-rows"
               placeholder="Length Of Hole(L)"
+              disabled
             />
           </li>
           <li>
-            <p>Stemming(ST)</p>
+            <p>Stemming (m)</p>
             <input
-              id="D"
+              id="Stemming"
               type="number"
               id="bench-height"
               placeholder="Stemming(ST)"
               step="0.01"
+              disabled
             />
           </li>
           <li>
-            <p>Number Of Holes(N)</p>
+            <p>Number Of Holes</p>
             <input
-              id="D"
+              id="Number Of Holes"
               type="number"
-              id="bench-width"
               placeholder="Number Of Holes(N)"
               step="0.01"
+              disabled
             />
           </li>
           <li>
-            <p>Density(RD)</p>
+            <p>Total Charge (kg)</p>
             <input
               type="number"
-              id="density"
+              id="Total Charge"
               placeholder="Density(RD)"
               step="0.01"
+              disabled
             />
           </li>
         </ul>
         <ul>
           <li>
-            <p>Change Length(CL)</p>
+            <p>Change Length (m)</p>
             <input
               type="number"
-              id="number-rows"
+              id="Change Length"
               placeholder="Change Length(CL)"
+              disabled
             />
           </li>
-          <li>
+          <!-- <li>
             <p>Ground Vibration(V)</p>
             <input
               type="number"
-              id="bench-height"
+              id="Ground Vibration"
               placeholder="Ground Vibration(V)"
               step="0.01"
+              disabled
             />
-          </li>
+          </li> -->
           <li>
-            <p>Powder Factor For A Hole(PF)</p>
+            <p>Powder Factor For A Hole (Tonnes/Kg)</p>
             <input
               type="number"
-              id="bench-width"
+              id="Powder Factor For A Hole"
               placeholder="Powder Factor For A Hole(PF)"
               step="0.01"
+              disabled
             />
           </li>
           <li>
-            <p>Blasting Cost(BC)</p>
+            <p>Blasting Cost (Rs.)</p>
             <input
               type="number"
-              id="density"
+              id="Blasting Cost"
               placeholder="Blasting Cost(BC)"
               step="0.01"
+              disabled
             />
           </li>
         </ul>
